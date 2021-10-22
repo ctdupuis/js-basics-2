@@ -22,7 +22,9 @@
 */
 
 //CODE HERE
-
+const greetUser = username => {
+    return `Welcome back, ${username}`
+}
 
 
 
@@ -50,7 +52,9 @@
 const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
-
+const canWeDeliver = zip => {
+    deliveryAreaZipCodes.includes(zip) ? "You're in our delivery zone!" : "Sorry, we can't deliver to that address"
+}
 
 
 /* 
@@ -71,7 +75,10 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
+const canWeDeliverTwo = zip => {
+    let result = deliveryAreaZipCodes.find(code => code === zip)
+    return result ? "You're in our delivery zone!" : "Sorry, we can't deliver to that address"
+}
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -107,7 +114,8 @@ const deals = [
 */
 
 //CODE HERE
-
+deals[0].title = deals[0].title.replace(15, 10)
+console.log(deals[0].title)
 
 
 /*
@@ -124,3 +132,5 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace("March", "April")
+console.log(deals[1].desc)
