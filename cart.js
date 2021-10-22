@@ -35,7 +35,8 @@ const cart = [
 
 //CODE HERE
 
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
+const summedPrice = cart.reduce((a, b) => ({totalPrice: a.price + b.price}))
+console.log(summedPrice)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -54,7 +55,9 @@ const cart = [
 */
 
 //CODE HERE
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return cartTotal + (cartTotal * tax) - couponValue
+}
 
 
 //////////////////PROBLEM 3////////////////////
@@ -79,7 +82,11 @@ const cart = [
 
 /*
     TEXT ANSWER HERE
-
+    For a cusomter object, you would definitely want their basic information such as name, email, phone number
+    and address. 
+    Those can all be stored as strings, except for address. I would consider putting that as an object. Other than that, I would definitely wanat a boolean to tell me
+    if they are a new customer or not. Additionally, I'd attach a wallet key with an object that points to the customer's current balance
+    and payment method, if they choose to save one online.
 */
 
 /*
@@ -88,3 +95,19 @@ const cart = [
 */
 
 //CODE HERE
+let customer = {
+    firstName: "Cody",
+    lastName: "Dupuis",
+    email: "relationalprogrammer@gmail.com",
+    address: {
+        street: "123 Not Putting My Address Lane",
+        city: "Lafayette",
+        state: "LA",
+        zip: 70508
+    },
+    new: true,
+    wallet: {
+        balance: 0.00,
+        paymentMethod: "VISA"
+    }
+}
