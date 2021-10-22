@@ -31,7 +31,14 @@
 */
 
 //CODE HERE
-
+let pizza = {
+    name: "big kahuna",
+    price: 10,
+    category: "entree",
+    popularity: 9,
+    rating: 4,
+    tags: ["tropical", "ham", "pineapple", "special"]
+}
 
 
 //////////////////PROBLEM 2////////////////////
@@ -43,7 +50,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -53,7 +60,7 @@
 */
 
 //CODE HERE
-
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -63,7 +70,8 @@
 */
 
 //CODE HERE
-
+let { price } = pizza
+console.log(price)
 
 /*
     Fourth, and last, destructure the category
@@ -73,7 +81,8 @@
 */
 
 //CODE HERE
-
+let { category } = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -88,7 +97,48 @@
 */
 
 //CODE HERE
-
+foodArr = [
+    {
+        name: "big kahuna pie",
+        price: 10,
+        category: "entree",
+        popularity: 9,
+        rating: 4,
+        tags: ["tropical", "meat", "fruits", "special"]
+    },
+    {
+        name: "crawdad dip",
+        price: 15,
+        category: "appetizer",
+        popularity: 10,
+        rating: 4,
+        tags: ["seafood", "cheese"]
+    },
+    {
+        name: "beyond meat burger",
+        price: 17,
+        category: "entree",
+        popularity: 5,
+        rating: 3,
+        tags: ["meat substitute", "burger", "sandwich"]
+    },
+    {
+        name: "cluck fried cow",
+        price: 11,
+        category: "entree",
+        popularity: 7,
+        rating: 5,
+        tags: ["meat", "fried", "filling", "special"]
+    },
+    {
+        name: "green greens",
+        price: 7,
+        category: "appetizer",
+        popularity: 8,
+        rating: 3,
+        tags: ["salad", "vegetarian", "vegan"]
+    }
+]
 
 
 //////////////////PROBLEM 4////////////////////
@@ -105,7 +155,8 @@
 
 //CODE HERE
 
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
+const filteredFood = foodArr.filter(food => food.tags.includes("meat"))
+console.log(filteredFood)
 
 
 
@@ -149,7 +200,16 @@
 */
 
 //CODE HERE
-
+const filterByProperty = (property, number, type) => {
+    let result = foodArr.filter(food => {
+        if (type === 'above') {
+            return food[property] > number
+        } else {
+            return food[property] < number
+        }
+    })
+    return result
+}
 
 /*
     Invoke the `filterByProperty` function passing
@@ -159,3 +219,4 @@
 */
 
 //CODE HERE
+console.log(filterByProperty('price', 10, 'above'))
